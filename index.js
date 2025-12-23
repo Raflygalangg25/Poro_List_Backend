@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 5000
+const port = process.env.PORT || 5000;
 //const bodyParser = require('body-parser')
 const db = require('./connection')
 const cors = require('cors')
@@ -110,8 +110,8 @@ app.delete("/tasks/:id", (req, res) => {
 
 
 passport.use(new GoogleLogin({
-  clientID: process.env.Google_Client_ID,
-  clientSecret: process.env.Google_Client_Secret,
+  clientID: process.env.GOOGLE_CLIENT_ID,
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
   callbackURL: "https://porolistbackend-production.up.railway.app/auth/google/callback"
 },
 (accessToken, refreshToken, profile, done) => {
@@ -151,5 +151,5 @@ passport.use(new GoogleLogin({
 
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Server running on port ${port}`)
 })
