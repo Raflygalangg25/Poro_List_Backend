@@ -112,7 +112,7 @@ app.delete("/tasks/:id", (req, res) => {
 passport.use(new GoogleLogin({
   clientID: "process.env.Google_Client_ID",
   clientSecret: "process.env.Google_Client_Secret",
-  callbackURL: "http://localhost:5000/auth/google/callback"
+  callbackURL: "https://porolistbackend-production.up.railway.app/auth/google/callback"
 },
 (accessToken, refreshToken, profile, done) => {
   const { id, displayName, emails, photos } = profile;
