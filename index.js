@@ -20,6 +20,10 @@ db.connect((err) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("Poro_List Backend is Running!");
+});
+
 app.get("/tasks", (req,res) => {
   const sql = `SELECT id, title, description, created_at, is_completed AS completed FROM task ORDER BY created_at DESC`;
   
