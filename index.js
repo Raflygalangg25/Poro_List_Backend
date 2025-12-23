@@ -137,7 +137,7 @@ passport.use(new GoogleLogin({
     passport.authenticate('google', {failureRedirect : '/login', session : false}),
     (req, res) => {
       const userString = encodeURIComponent(JSON.stringify(req.user));
-      res.redirect(`http://localhost:3000/dashboard?user=${userString}`);
+      res.redirect(`https://poro-list-frontend.vercel.app/dashboard?user=${userString}`);
     }
   );
 
