@@ -11,6 +11,7 @@ require('dotenv').config();
 //app.use(bodyParser.json())
 app.use(express.json())
 app.use(cors())
+app.use(passport.initialize())
 
 db.connect((err) => {
   if(err){
